@@ -5,7 +5,20 @@ const Home = () => {
         <div>
             <h1>홈</h1>
             <p>최초</p>
-            <Link to="/about">소개</Link>
+            <ul>
+                <li>
+                    <Link to="/about">소개</Link>
+                </li>
+                <li>
+                    <Link to="/profile/velopert">velopert 프로필</Link>
+                </li>
+                <li>
+                    <Link to="/profile/gildong">gildong 프로필</Link>    
+                </li>
+                <li>
+                    <Link to="/profile/void">존재하지 않음</Link>
+                </li>                                                
+            </ul>
         </div>
     );
 };
