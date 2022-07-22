@@ -5,6 +5,7 @@ import Profile from "./pages/profile";
 import Articles from "./pages/Articles";
 import Article from "./pages/Article";
 import Layout from "./Layout";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/articles" element={<Articles></Articles>}>
         <Route path=":id" element={<Article></Article>}></Route>
       </Route>
+      <Route path="*" element={<NotFound></NotFound>}></Route>
     </Routes>
   );
 }
