@@ -1,21 +1,28 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 
 const Articles = () => {
     return (
         <div>
             <Outlet></Outlet>
                 <ul>
-                    <li>
-                        <Link to="/articles/1">게시글1</Link>
-                    </li>
-                    <li>
-                        <Link to="/articles/2">게시글2</Link>
-                    </li>
-                    <li>
-                        <Link to="/articles/3">게시글3</Link>
-                    </li>
+                    <ArticleItem id={1}></ArticleItem>
+                    <ArticleItem id={2}></ArticleItem>
+                    <ArticleItem id={3}></ArticleItem>
                 </ul>
         </div>
+    );
+};
+
+const ArticleItem = ({id}) => {
+    const activeStyle = {
+        color: 'green',
+        fontSize: 21
+    };
+
+    return (
+        <li>
+            <NavLink to={`/articles/${id}`} style={({isActive})=>(isActive ? activeStyle : undefined)}>게시글 {id}</NavLink>
+        </li>        
     );
 };
 
